@@ -15,10 +15,17 @@
 				<form>
 					<input type="text" name="username" placeholder="username" /> <input
 						type="password" name="password" placeholder="password" />
-					<button>login</button>
+						
+					<button>ACESSAR</button>
+					
 					<p class="message">
 						Não cadastrado? <a href="#">Crie uma conta</a>
 					</p>
+					
+					
+					<input type="hidden" th:name="${_csrf.parameterName}"
+						th:value="${_csrf.token}" />
+						
 				</form>
 			</div>
 		</div>
