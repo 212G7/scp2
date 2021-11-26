@@ -7,54 +7,54 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
-import com.fatec.scp.model.Cliente;
-import com.fatec.scp.model.ClienteRepository;
+import com.fatec.scp.model.Processo;
+import com.fatec.scp.model.ProcessoRepository;
 import com.fatec.scp.model.Endereco;
 import com.fatec.scp.model.EnderecoRepository;
 
 @Service
-public class ClienteServicoI implements ClienteServico {
-	Logger logger = LogManager.getLogger(ClienteServicoI.class);
+public class ProcessoServicoI implements ProcessoServico {
+	Logger logger = LogManager.getLogger(ProcessoServicoI.class);
 	@Autowired
-	private ClienteRepository clienteRepository;
+	private ProcessoRepository processoRepository;
 	@Autowired
 	private EnderecoRepository enderecoRepository;
 
-	public Iterable<Cliente> findAll() {
-		return clienteRepository.findAll();
+	public Iterable<Processo> findAll() {
+		return processoRepository.findAll();
 	}
 
-	public Cliente findByCpf(String cpf) {
-		return clienteRepository.findByCpf(cpf);
+	public Processo findByCpf(String cpf) {
+		return processoRepository.findByCpf(cpf);
 	}
 
 	public void deleteById(Long id) {
-		clienteRepository.deleteById(id);
+		processoRepository.deleteById(id);
 		logger.info(">>>>>> 2. comando exclusao executado para o id => " + id);
 	}
 
-	public Cliente findById(Long id) {
-		return clienteRepository.findById(id).get();
+	public Processo findById(Long id) {
+		return processoRepository.findById(id).get();
 	}
 
-	public ModelAndView saveOrUpdate(Cliente cliente) {
-		ModelAndView modelAndView = new ModelAndView("consultarCliente");
+	public ModelAndView saveOrUpdate(Processo processo) {
+		ModelAndView modelAndView = new ModelAndView("consultarProcesso");
 		try {
-			Endereco endereco = obtemEndereco(cliente.getCep());
+			Endereco endereco = obtemEndereco(processo.getCep());
 			if (endereco != null) {
-//cliente.setDataCadastro(new DateTime());
-				endereco.setCpf(cliente.getCpf());
+//Processo.setDataCadastro(new DateTime());
+				endereco.setCpf(processo.getCpf());
 				enderecoRepository.save(endereco);
-				cliente.setEndereco(endereco);
-				clienteRepository.save(cliente);
+				processo.setEndereco(endereco);
+				processoRepository.save(processo);
 				logger.info(">>>>>> 4. comando save executado ");
-				modelAndView.addObject("clientes", clienteRepository.findAll());
+				modelAndView.addObject("processos", processoRepository.findAll());
 			}
 		} catch (Exception e) {
 			modelAndView.setViewName("cadastrarCliente");
 			if (e.getMessage().contains("could not execute statement")) {
-				modelAndView.addObject("message", "Dados invalidos - cliente já cadastrado.");
-				logger.info(">>>>>> 5. cliente ja cadastrado ==> " + e.getMessage());
+				modelAndView.addObject("message", "Dados invalidos - processo já cadastrado.");
+				logger.info(">>>>>> 5. processo ja cadastrado ==> " + e.getMessage());
 			} else {
 				modelAndView.addObject("message", "Erro não esperado - contate o administrador");
 				logger.error(">>>>>> 5. erro nao esperado ==> " + e.getMessage());
