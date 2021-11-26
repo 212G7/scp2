@@ -36,10 +36,10 @@ public class ClienteController {
 		return mv;
 	}
 
-	@GetMapping("/clientes/{cpf}") // diz ao metodo que ira responder a uma requisicao do tipo get
-	public ModelAndView retornaFormParaEditarCliente(@PathVariable("cpf") String cpf) {
+	@GetMapping("/clientes/{id}") // diz ao metodo que ira responder a uma requisicao do tipo get
+	public ModelAndView retornaFormParaEditarCliente(@PathVariable("id") Long id) {
 		ModelAndView modelAndView = new ModelAndView("atualizarCliente");
-		modelAndView.addObject("cliente", servico.findByCpf(cpf)); // o repositorio e injetado no controller
+		modelAndView.addObject("cliente", servico.findById(id)); // o repositorio e injetado no controller
 		return modelAndView; // addObject adiciona objetos para view
 	}
 
@@ -56,7 +56,7 @@ public class ClienteController {
 	public ModelAndView save(@Validated Cliente cliente, BindingResult result) {
 		ModelAndView modelAndView = new ModelAndView("consultarCliente");
 		if (result.hasErrors()) {
-			modelAndView.setViewName("cadastrarClientes"); //aqui eu coloquei um "s" no cliente
+			modelAndView.setViewName("cadastrarCliente"); //aqui eu NÃO coloquei um "s" no cliente
 		} else {
 			modelAndView = servico.saveOrUpdate(cliente);
 		}
@@ -75,7 +75,8 @@ public class ClienteController {
 		umCliente.setCpf(cliente.getCpf());
 		umCliente.setNome(cliente.getNome());
 		umCliente.setEmail(cliente.getEmail());
-		umCliente.setTel(cliente.getTel()); //aqui troquei o CEP pelo tel
+		umCliente.setTel(cliente.getTel());
+		umCliente.setCep(cliente.getCep());//aqui eu coloquei o CEP.
 		modelAndView = servico.saveOrUpdate(umCliente);
 		return modelAndView;
 	}
