@@ -5,8 +5,14 @@
 <link rel="stylesheet" type="text/css"
 	th:href="@{/css/estilo-login.css}" />
 <head>
+
 </head>
+
+
+
 <body>
+
+
 	<div th:if="${param.error}">Invalid username and password.</div>
 	<div th:if="${param.logout}">You have been logged out.</div>
 	<form th:action="@{/login}" method="post">
