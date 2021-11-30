@@ -5,12 +5,12 @@
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 
 
-<title>Cadastrar Testemunha</title>
+<title>Cadastrar Cliente</title>
 
 
 <script type="text/javascript">
 	function consulta() {
-		window.open("/sig/testemunhas");
+		window.open("/sig/audiencias");
 	}
 </script>
 
@@ -33,12 +33,12 @@
 	</header>
 	<div class="container my-5">
 		<br />
-		<h3>Cadastrar Testemunhas</h3>
+		<h3>Cadastrar Audiênciass</h3>
 		<div class="card">
 			<div class="card-body">
 				<div class="col-md-8">
-					<form action="#" th:action="@{/sig/testemunhas}"
-						th:object="${testemunha}" method="post">
+					<form action="#" th:action="@{/sig/audiencias}"
+						th:object="${audiencia}" method="post">
 						<div class="row">
 							<div class="form-group col-md-4">
 								<label for="cpf" class="col-form-label">CPF</label> <input
@@ -86,8 +86,8 @@
 						</div>
 						<div class="form-group col-md-8">
 							<input type="submit" class="btn btn-primary"
-								value="Cadastrar Testemunha"> <input type="button"
-								class="btn btn-primary" value="Consultar Testemunha"
+								value="Cadastrar Cliente"> <input type="button"
+								class="btn btn-primary" value="Consultar Cliente"
 								onclick="consulta();">
 						</div>
 					</form>
