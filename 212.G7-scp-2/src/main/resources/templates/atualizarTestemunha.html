@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>Atualizar testemunha</title>
+<title>Atualizar Testemunha</title>
 <script type="text/javascript">
 	function consulta() {
 		window.open("/sig/testemunhas");
@@ -25,7 +25,7 @@
 <body>
 	<div class="container my-5">
 		<br />
-		<h3>Atualizar Cliente</h3>
+		<h3>Atualizar Testemunha</h3>
 		<div class="card">
 			<div class="card-body">
 				<div class="col-md-8">
@@ -36,33 +36,33 @@
 							<div class="form-group col-md-4">
 								<label for="cpf" class="col-form-label">CPF</label> <input
 									type="text" th:field="*{cpf}" class="form-control" id="cpf"
-									placeholder="cpf"> <span
+									placeholder="CPF"> <span
 									th:if="${#fields.hasErrors('cpf')}" th:errors="*{cpf}"
 									class="text-danger"> </span>
 							</div>
 						</div>
 						<div class="row">
 							<div class="form-group col-md-8">
-								<label for="nome" class="col-form-label">Nome</label> 
+								<label for="nome" class="col-form-label">Nome da Testemunha</label> 
 								<input type="text" th:field="*{nome}" class="form-control" id="nome"
-									placeholder="Nome"> <span
+									placeholder="Nome da Testemunha"> <span
 									th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"
 									class="text-danger"> </span>
 							</div>
 						</div>
-						<div class="row">
+						<!--  <div class="row">
 							<div class="form-group col-md-8">
 								<label for="email" class="col-form-label">E-mail</label> <input
 									type="text" th:field="*{email}" class="form-control" id="email"
 									placeholder="E-mail"> <span
 									th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
 									class="text-danger"></span>
-							</div>
+							</div>-->
 							<div class="form-group col-md-8">
-								<label for="tel" class="col-form-label">TEL</label> <input
-									type="text" th:field="*{tel}" class="form-control" id="tel"
-									placeholder="TEL"> <span
-									th:if="${#fields.hasErrors('tel')}" th:errors="*{tel}"
+								<label for="processo" class="col-form-label">Código do Processo Relacionado</label> <input
+									type="text" th:field="*{processo}" class="form-control" id="processo"
+									placeholder="Código do Processo Relacionado"> <span
+									th:if="${#fields.hasErrors('processo')}" th:errors="*{processo}"
 									class="text-danger"></span>
 							</div>
 							<div class="form-group col-md-8">
@@ -74,8 +74,8 @@
 							</div>
 							
 							<div class="form-group col-md-8">
-								<input type="submit" class="btn btn-primary" value="Atualizar Cliente">
-								<input type="button" class="btn btn-primary" value="Consultar Cliente" onclick="consulta();">
+								<input type="submit" class="btn btn-primary" value="Atualizar Testemunha">
+								<input type="button" class="btn btn-primary" value="Consultar Testemunha" onclick="consulta();">
 							</div>
 						</div>
 					</form>

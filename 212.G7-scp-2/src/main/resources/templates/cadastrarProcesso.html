@@ -43,7 +43,7 @@
 							<div class="form-group col-md-4">
 								<label for="cpf" class="col-form-label">CPF</label> <input
 									type="text" th:field="*{cpf}" class="form-control" id="cpf"
-									placeholder="CPF"> <span
+									placeholder=""> <span  
 									th:if="${#fields.hasErrors('cpf')}" th:errors="*{cpf}"
 									class="textdanger"> </span>
 							</div>
@@ -52,35 +52,52 @@
 							<div class="form-group col-md-8">
 								<label for="nome" class="col-form-label">Nome</label> <input
 									type="text" th:field="*{nome}" class="form-control" id="nome"
-									placeholder="Nome"> <span
+									placeholder=""> <span 
 									th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"
 									class="textdanger"> </span>
 							</div>
 						</div>
 						<div class="row">
 							<div class="form-group col-md-8">
-								<label for="email" class="col-form-label">E-mail</label> <input
-									type="text" th:field="*{email}" class="form-control" id="email"
-									placeholder="Email"> <span
-									th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
+								<label for="advogado" class="col-form-label">Advogado Responsável</label> <input
+									type="text" th:field="*{advogado}" class="form-control" id="advogado"
+									placeholder=""> <span 
+									th:if="${#fields.hasErrors('advogado')}" th:errors="*{advogado}"
 									class="textdanger"></span>
 							</div>
 						</div>
 						<div class="row">
 							<div class="form-group col-md-8">
-								<label for="tel" class="col-form-label">Telefone</label> <input
-									type="text" th:field="*{tel}" class="form-control" id="tel"
-									placeholder="Telefone"> <span
-									th:if="${#fields.hasErrors('tel')}" th:errors="*{tel}"
+								<label for="descricao" class="col-form-label">Descrição do Processo</label> <input
+									type="text" th:field="*{descricao}" class="form-control" id="descricao"
+									placeholder=""> <span  
+									th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}"
 									class="textdanger"></span>
 							</div>
 						</div>
-						<div class="row">
+					  	<div class="row">
 							<div class="form-group col-md-8">
-								<label for="cep" class="col-form-label">CEP</label> <input
-									type="text" th:field="*{cep}" class="form-control" id="cep"
-									placeholder="CEP"> <span
-									th:if="${#fields.hasErrors('cep')}" th:errors="*{cep}"
+								<label for="testemunha" class="col-form-label">Testemunhas Envolvidas</label> <input
+									type="text" th:field="*{testemunha}" class="form-control" id="testemunha"
+									placeholder=""> <span
+									th:if="${#fields.hasErrors('testemunha')}" th:errors="*{testemunha}"
+									class="textdanger"></span>
+							</div>
+						</div>
+						  <div class="row">
+							<div class="form-group col-md-8">
+								<label for="data" class="col-form-label">Data do Cadastro</label> <input
+									type="text" th:field="*{data}" class="form-control" id="data"
+									placeholder="coloque a data com a barra ( / ) "> <span
+									th:if="${#fields.hasErrors('data')}" th:errors="*{data}"
+									class="textdanger"></span>
+							</div>
+							<div class="row">
+							<div class="form-group col-md-8">
+								<label for="conclusao" class="col-form-label">Data da Conclusão</label> <input
+									type="text" th:field="*{conclusao}" class="form-control" id="conclusao"
+									placeholder="coloque a data com a barra ( / ) "> <span
+									th:if="${#fields.hasErrors('conclusao')}" th:errors="*{data}"
 									class="textdanger"></span>
 							</div>
 						</div>

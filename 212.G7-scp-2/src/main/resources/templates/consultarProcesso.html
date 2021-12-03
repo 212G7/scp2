@@ -5,7 +5,7 @@
 <meta charset="UTF-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width" />
-<title>Lista de processos</title>
+<title>Lista dos Processos</title>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
 	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
@@ -23,7 +23,7 @@
 	</header>
 	<div class="panel panel-default" style="margin: 10px">
 		<div class="panel-heading">
-			<h5 class="panel-title">Lista de processos</h5>
+			<h5 class="panel-title">Lista dos Processos</h5>
 			<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"
 				rel="stylesheet" />
 			<link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}"
@@ -38,11 +38,12 @@
 							<th>ID</th>
 							<th>CPF</th>
 							<th>Nome</th>
-							<th>e-mail</th>
-							<th>CEP</th>
-							<th>Endereço</th>
+							<th>Advogado Responsável</th>
+							<th>Descrição do Processo</th>
+							<th>Testemunhas Envolvidas</th>
+<!--  							<th>Endereço</th> -->
 							<th>Dt. Cadastro</th>
-							<th>Dt. Ultima TR</th>
+							<th>Dt. da Conclusão</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -50,9 +51,12 @@
 							<td th:text="${processo.id}"></td>
 							<td th:text="${processo.cpf}"></td>
 							<td th:text="${processo.nome}"></td>
-							<td th:text="${processo.email}"></td>
-							<td th:text="${processo.cep}"></td>
-							<td th:text="${processo.endereco.logradouro}"></td>
+							<td th:text="${processo.advogado}"></td>
+							<td th:text="${processo.descricao}"></td>
+							<td th:text="${processo.testemunha}"></td>
+							<td th:text="${processo.data}"></td>
+							<td th:text="${processo.conclusao}"></td>
+						<!--<td th:text="${processo.endereco.logradouro}"></td>-->
 							<td th:text="${processo.dataCadastro}"></td>
 							<td th:text="${processo.dataUltimaTransacao}"></td>
 							<td>

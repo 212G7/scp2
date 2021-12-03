@@ -74,8 +74,8 @@ public class TestemunhaController {
 		Testemunha umTestemunha = servico.findById(id);
 		umTestemunha.setCpf(testemunha.getCpf());
 		umTestemunha.setNome(testemunha.getNome());
-		umTestemunha.setEmail(testemunha.getEmail());
-		umTestemunha.setTel(testemunha.getTel());
+		//umTestemunha.setEmail(testemunha.getEmail());
+		umTestemunha.setProcesso(testemunha.getProcesso());
 		umTestemunha.setCep(testemunha.getCep());//aqui eu coloquei o CEP.
 		modelAndView = servico.saveOrUpdate(umTestemunha);
 		return modelAndView;

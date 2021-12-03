@@ -2,7 +2,7 @@ package com.fatec.scp.servico;
 
 import org.springframework.web.servlet.ModelAndView;
 import com.fatec.scp.model.Processo;
-import com.fatec.scp.model.Endereco;
+//import com.fatec.scp.model.Endereco;
 
 public interface ProcessoServico {
 	public Iterable<Processo> findAll();
@@ -15,5 +15,5 @@ public interface ProcessoServico {
 
 	public ModelAndView saveOrUpdate(Processo processo);
 
-	public Endereco obtemEndereco(String cep);
+//	public Endereco obtemEndereco(String cep);
 }

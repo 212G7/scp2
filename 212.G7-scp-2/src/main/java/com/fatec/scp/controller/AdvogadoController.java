@@ -77,6 +77,7 @@ public class AdvogadoController {
 		umAdvogado.setEmail(advogado.getEmail());
 		umAdvogado.setTel(advogado.getTel());
 		umAdvogado.setCep(advogado.getCep());//aqui eu coloquei o CEP.
+		umAdvogado.setOAB(advogado.getOAB());//aqui eu coloquei o OAB.
 		modelAndView = servico.saveOrUpdate(umAdvogado);
 		return modelAndView;
 	}

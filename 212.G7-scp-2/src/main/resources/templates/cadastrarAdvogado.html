@@ -43,7 +43,7 @@
 							<div class="form-group col-md-4">
 								<label for="cpf" class="col-form-label">CPF</label> <input
 									type="text" th:field="*{cpf}" class="form-control" id="cpf"
-									placeholder="CPF"> <span
+									placeholder=""> <span
 									th:if="${#fields.hasErrors('cpf')}" th:errors="*{cpf}"
 									class="textdanger"> </span>
 							</div>
@@ -52,7 +52,7 @@
 							<div class="form-group col-md-8">
 								<label for="nome" class="col-form-label">Nome</label> <input
 									type="text" th:field="*{nome}" class="form-control" id="nome"
-									placeholder="Nome"> <span
+									placeholder=""> <span
 									th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"
 									class="textdanger"> </span>
 							</div>
@@ -61,7 +61,7 @@
 							<div class="form-group col-md-8">
 								<label for="email" class="col-form-label">E-mail</label> <input
 									type="text" th:field="*{email}" class="form-control" id="email"
-									placeholder="Email"> <span
+									placeholder=""> <span
 									th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
 									class="textdanger"></span>
 							</div>
@@ -70,8 +70,17 @@
 							<div class="form-group col-md-8">
 								<label for="tel" class="col-form-label">Telefone</label> <input
 									type="text" th:field="*{tel}" class="form-control" id="tel"
-									placeholder="Telefone"> <span
+									placeholder=""> <span
 									th:if="${#fields.hasErrors('tel')}" th:errors="*{tel}"
+									class="textdanger"></span>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-8">
+								<label for="OAB" class="col-form-label">OAB</label> <input
+									type="text" th:field="*{OAB}" class="form-control" id="OAB"
+									placeholder="Digite somente os 05 números"> <span
+									th:if="${#fields.hasErrors('OAB')}" th:errors="*{OAB}"
 									class="textdanger"></span>
 							</div>
 						</div>
@@ -79,7 +88,7 @@
 							<div class="form-group col-md-8">
 								<label for="cep" class="col-form-label">CEP</label> <input
 									type="text" th:field="*{cep}" class="form-control" id="cep"
-									placeholder="CEP"> <span
+									placeholder=""> <span
 									th:if="${#fields.hasErrors('cep')}" th:errors="*{cep}"
 									class="textdanger"></span>
 							</div>

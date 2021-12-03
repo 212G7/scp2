@@ -23,12 +23,20 @@ public class Processo {
 	@NotNull
 	@Size(min = 1, max = 50, message = "Nome deve ser preenchido")
 	private String nome;
-	@Email(message = "E-mail inválido")
-	private String email;
+	//@Email(message = "E-mail inválido")
+	//private String email;
 	@NotNull
-	private String cep;
+	private String advogado;
 	@NotNull
-	private Long tel;
+	private String testemunha;
+//	@NotNull
+//	private String cep;
+	@NotNull
+	private String descricao;
+	@NotNull
+	private String data;
+	@NotNull
+	private String conclusao;
 	@ManyToOne
 	private Endereco endereco;
 	private String dataCadastro;
@@ -37,13 +45,16 @@ public class Processo {
 	public Processo() {
 	}
 
-	public Processo(String CPF, String nome, String email, String cep,Long tel, Endereco endereco) {
+	public Processo(String CPF, String nome, String advogado, String descricao, String testemunha, String data, String conclusao, Endereco endereco) {
 		super();
 		this.cpf = CPF;
 		this.nome = nome;
-		this.email = email;
-		this.tel = tel;
-		this.cep = cep;
+//		this.cep = cep;
+		this.advogado = advogado;
+		this.descricao = descricao;
+		this.testemunha = testemunha;
+		this.data = data;
+		this.conclusao = conclusao;
 		this.endereco = endereco;
 		DateTime dataAtual = new DateTime();
 		setDataCadastro(dataAtual);
@@ -64,6 +75,13 @@ public class Processo {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
+//	public String getCep() {
+//		return cep;
+//	}
+
+//	public void setCep(String cep) {
+//		this.cep = cep;
+//	}
 
 	public String getNome() {
 		return nome;
@@ -73,28 +91,44 @@ public class Processo {
 		this.nome = nome;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getAdvogado() {
+		return advogado;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setAdvogado(String advogado) {
+		this.advogado = advogado;
 	}
 
-	public Long getTel() {
-		return tel;
+	public String getDescricao() {
+		return descricao;
 	}
 
-	public void setTel(Long tel) {
-		this.tel = tel;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 	
-	public String getCep() {
-		return cep;
+	public String getTestemunha() {
+		return testemunha;
 	}
 
-	public void setCep(String cep) {
-		this.cep = cep;
+	public void setTestemunha(String testemunha) {
+		this.testemunha = testemunha;
+	}
+	
+	public String getData() {
+		return data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+	
+	public String getConclusao() {
+		return conclusao;
+	}
+
+	public void setConclusao(String conclusao) {
+		this.conclusao = conclusao;
 	}
 
 	public Endereco getEndereco() {

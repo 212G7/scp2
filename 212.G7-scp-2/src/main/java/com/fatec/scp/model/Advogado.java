@@ -29,6 +29,8 @@ public class Advogado {
 	private String cep;
 	@NotNull
 	private Long tel;
+	@NotNull
+	private String OAB;
 	@ManyToOne
 	private Endereco endereco;
 	private String dataCadastro;
@@ -37,12 +39,13 @@ public class Advogado {
 	public Advogado() {
 	}
 
-	public Advogado(String CPF, String nome, String email, String cep,Long tel, Endereco endereco) {
+	public Advogado(String CPF, String nome, String email, String OAB, String cep,Long tel, Endereco endereco) {
 		super();
 		this.cpf = CPF;
 		this.nome = nome;
 		this.email = email;
 		this.tel = tel;
+		this.OAB = OAB;
 		this.cep = cep;
 		this.endereco = endereco;
 		DateTime dataAtual = new DateTime();
@@ -87,6 +90,13 @@ public class Advogado {
 
 	public void setTel(Long tel) {
 		this.tel = tel;
+	}
+	public String getOAB() {
+		return OAB;
+	}
+
+	public void setOAB(String OAB) {
+		this.OAB = OAB;
 	}
 	
 	public String getCep() {

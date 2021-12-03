@@ -23,12 +23,12 @@ public class Testemunha {
 	@NotNull
 	@Size(min = 1, max = 50, message = "Nome deve ser preenchido")
 	private String nome;
-	@Email(message = "E-mail inválido")
-	private String email;
+	//@Email(message = "E-mail inválido")
+	//private String email;
 	@NotNull
 	private String cep;
 	@NotNull
-	private Long tel;
+	private Long processo;
 	@ManyToOne
 	private Endereco endereco;
 	private String dataCadastro;
@@ -37,12 +37,12 @@ public class Testemunha {
 	public Testemunha() {
 	}
 
-	public Testemunha (String CPF, String nome, String email, String cep,Long tel, Endereco endereco) {
+	public Testemunha (String CPF, String nome, String cep, Long processo, Endereco endereco) {
 		super();
 		this.cpf = CPF;
 		this.nome = nome;
-		this.email = email;
-		this.tel = tel;
+//		this.email = email;
+		this.processo = processo;
 		this.cep = cep;
 		this.endereco = endereco;
 		DateTime dataAtual = new DateTime();
@@ -73,20 +73,20 @@ public class Testemunha {
 		this.nome = nome;
 	}
 
-	public String getEmail() {
-		return email;
+	//public String getEmail() {
+		//return email;
+	//}
+
+	//public void setEmail(String email) {
+		//this.email = email;
+	//}
+
+	public Long getProcesso() {
+		return processo;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public Long getTel() {
-		return tel;
-	}
-
-	public void setTel(Long tel) {
-		this.tel = tel;
+	public void setProcesso(Long processo) {
+		this.processo = processo;
 	}
 	
 	public String getCep() {

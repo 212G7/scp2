@@ -74,9 +74,12 @@ public class ProcessoController {
 		Processo umProcesso = servico.findById(id);
 		umProcesso.setCpf(processo.getCpf());
 		umProcesso.setNome(processo.getNome());
-		umProcesso.setEmail(processo.getEmail());
-		umProcesso.setTel(processo.getTel());
-		umProcesso.setCep(processo.getCep());//aqui eu coloquei o CEP.
+//		umProcesso.setCep(processo.getCep());
+		umProcesso.setAdvogado(processo.getAdvogado());//aqui eu coloquei o Advogado Responsável.
+		umProcesso.setDescricao(processo.getDescricao());//aqui eu coloquei a Descrição do processo.
+		umProcesso.setTestemunha(processo.getTestemunha());//aqui eu coloquei das Testemunhas envolvidas.
+		umProcesso.setData(processo.getData());//aqui eu coloquei Data do Cadastro.
+		umProcesso.setConclusao(processo.getConclusao());//aqui eu coloquei Data do Cadastro.
 		modelAndView = servico.saveOrUpdate(umProcesso);
 		return modelAndView;
 	}
