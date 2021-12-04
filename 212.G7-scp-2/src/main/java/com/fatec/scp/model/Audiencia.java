@@ -28,7 +28,7 @@ public class Audiencia {
 	@NotNull
 	private String cep;
 	@NotNull
-	private Long tel;
+	private String registro;
 	@ManyToOne
 	private Endereco endereco;
 	private String dataCadastro;
@@ -37,12 +37,12 @@ public class Audiencia {
 	public Audiencia() {
 	}
 
-	public Audiencia(String CPF, String nome, String email, String cep,Long tel, Endereco endereco) {
+	public Audiencia(String CPF, String nome, String email, String cep, String registro, Endereco endereco) {
 		super();
 		this.cpf = CPF;
 		this.nome = nome;
 		this.email = email;
-		this.tel = tel;
+		this.registro = registro;
 		this.cep = cep;
 		this.endereco = endereco;
 		DateTime dataAtual = new DateTime();
@@ -80,13 +80,13 @@ public class Audiencia {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-	public Long getTel() {
-		return tel;
+	
+	public String getRegistro() {
+		return registro;
 	}
 
-	public void setTel(Long tel) {
-		this.tel = tel;
+	public void setRegistro(String registro) {
+		this.registro = registro;
 	}
 	
 	public String getCep() {

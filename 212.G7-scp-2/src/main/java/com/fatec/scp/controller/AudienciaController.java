@@ -75,7 +75,8 @@ public class AudienciaController {
 		umAudiencia.setCpf(audiencia.getCpf());
 		umAudiencia.setNome(audiencia.getNome());
 		umAudiencia.setEmail(audiencia.getEmail());
-		umAudiencia.setTel(audiencia.getTel());
+//		umAudiencia.setTel(audiencia.getTel());
+		umAudiencia.setRegistro(audiencia.getRegistro());
 		umAudiencia.setCep(audiencia.getCep());//aqui eu coloquei o CEP.
 		modelAndView = servico.saveOrUpdate(umAudiencia);
 		return modelAndView;

@@ -31,8 +31,9 @@
 				<div class="col-md-8">
 					<form action="#"
 						th:action="@{/sig/audiencias/{id} (id=${audiencia.id}) }"
-						th:object="${cliente}" method="post">
+						th:object="${audiencia}" method="post">
 						<div class="row">
+						
 							<div class="form-group col-md-4">
 								<label for="cpf" class="col-form-label">CPF</label> <input
 									type="text" th:field="*{cpf}" class="form-control" id="cpf"
@@ -58,13 +59,17 @@
 									th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
 									class="text-danger"></span>
 							</div>
+							
+							
 							<div class="form-group col-md-8">
-								<label for="tel" class="col-form-label">TEL</label> <input
-									type="text" th:field="*{tel}" class="form-control" id="tel"
-									placeholder="TEL"> <span
-									th:if="${#fields.hasErrors('tel')}" th:errors="*{tel}"
+								<label for="registro" class="col-form-label">Registro da OAB - Advogado</label> <input
+									type="text" th:field="*{registro}" class="form-control" id="registro"
+									placeholder="registro"> <span
+									th:if="${#fields.hasErrors('registro')}" th:errors="*{registro}"
 									class="text-danger"></span>
 							</div>
+							
+							
 							<div class="form-group col-md-8">
 								<label for="cep" class="col-form-label">CEP</label> <input
 									type="text" th:field="*{cep}" class="form-control" id="cep"
