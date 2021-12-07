@@ -37,13 +37,12 @@
 						<tr>
 							<th>ID</th>
 							<th>CPF</th>
-							<th>Nome</th>
-							<th>e-mail</th>
-							<th>CEP</th>
-							<th>OAB</th>
+							<th>Nome do Advogado</th>
+							<th>E-mail</th>
+							<th>Registro do OAB</th>
+							<th>CEP</th>	
 							<th>Endereço</th>
-							<th>Dt. Cadastro</th>
-							<th>Dt. Ultima TR</th>
+							
 						</tr>
 					</thead>
 					<tbody>
@@ -52,8 +51,8 @@
 							<td th:text="${advogado.cpf}"></td>
 							<td th:text="${advogado.nome}"></td>
 							<td th:text="${advogado.email}"></td>
-							<td th:text="${advogado.cep}"></td>
 							<td th:text="${advogado.OAB}"></td>
+							<td th:text="${advogado.cep}"></td>
 							<td th:text="${advogado.endereco.logradouro}"></td>
 							<td th:text="${advogado.dataCadastro}"></td>
 							<td th:text="${advogado.dataUltimaTransacao}"></td>

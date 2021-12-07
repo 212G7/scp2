@@ -38,11 +38,11 @@
 							<th>ID</th>
 							<th>CPF</th>
 							<th>Nome</th>
-							<th>e-mail</th>
-							<th>CEP</th>
-							<th>Endereço</th>
-							<th>Dt. Cadastro</th>
-							<th>Dt. Ultima TR</th>
+							<th>Identificação do Processo</th>
+							<th>Valor do Processo</th>
+							<!--<th>Endereço</th>-->
+							<!--  <th>Dt. Cadastro</th>-->
+							<!-- <th>Dt. Ultima TR</th>-->
 						</tr>
 					</thead>
 					<tbody>
@@ -50,9 +50,11 @@
 							<td th:text="${boleto.id}"></td>
 							<td th:text="${boleto.cpf}"></td>
 							<td th:text="${boleto.nome}"></td>
-							<td th:text="${boleto.email}"></td>
-							<td th:text="${boleto.cep}"></td>
-							<td th:text="${boleto.endereco.logradouro}"></td>
+							<!--  <td th:text="${boleto.email}"></td>-->
+							<td th:text="${boleto.valor}"></td>
+							<td th:text="${boleto.processo}"></td>
+							<!--  <td th:text="${boleto.cep}"></td>-->
+							<!--  <td th:text="${boleto.endereco.logradouro}"></td>-->
 							<td th:text="${boleto.dataCadastro}"></td>
 							<td th:text="${boleto.dataUltimaTransacao}"></td>
 							<td>

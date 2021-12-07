@@ -23,7 +23,7 @@ public class AudienciaController {
 	AudienciaServico servico;
 
 	@GetMapping("/audiencias")
-	public ModelAndView retornaFormDeConsultaTodosClientes() {
+	public ModelAndView retornaFormDeConsultaTodosAudiencias() {
 		ModelAndView modelAndView = new ModelAndView("consultarAudiencia");
 		modelAndView.addObject("audiencias", servico.findAll());
 		return modelAndView;
@@ -56,7 +56,7 @@ public class AudienciaController {
 	public ModelAndView save(@Validated Audiencia audiencia, BindingResult result) {
 		ModelAndView modelAndView = new ModelAndView("consultarAudiencia");
 		if (result.hasErrors()) {
-			modelAndView.setViewName("cadastrarAudiencia"); //aqui eu NÃO coloquei um "s" no audiencia
+			modelAndView.setViewName("cadastrarAudiencia"); // aqui eu NÃO coloquei um "s" no audiencia
 		} else {
 			modelAndView = servico.saveOrUpdate(audiencia);
 		}
@@ -64,20 +64,27 @@ public class AudienciaController {
 	}
 
 	@PostMapping("/audiencias/{id}")
-	public ModelAndView atualizaCliente(@PathVariable("id") Long id, @Validated Audiencia audiencia, BindingResult result) {
+	public ModelAndView atualizaAudiencia(@PathVariable("id") Long id, @Validated Audiencia audiencia,
+			BindingResult result) {
 		ModelAndView modelAndView = new ModelAndView("consultarAudiencia");
 		if (result.hasErrors()) {
 			audiencia.setId(id);
 			return new ModelAndView("atualizarAudiencia");
 		}
-// programacao defensiva - deve-se verificar se o Cliente existe antes de atualizar
+// programacao defensiva - deve-se verificar se a Audiência existe antes de atualizar
 		Audiencia umAudiencia = servico.findById(id);
 		umAudiencia.setCpf(audiencia.getCpf());
-		umAudiencia.setNome(audiencia.getNome());
-		umAudiencia.setEmail(audiencia.getEmail());
+		umAudiencia.setJuiz(audiencia.getJuiz());
+//		umAudiencia.setEmail(audiencia.getEmail());
 //		umAudiencia.setTel(audiencia.getTel());
 		umAudiencia.setRegistro(audiencia.getRegistro());
-		umAudiencia.setCep(audiencia.getCep());//aqui eu coloquei o CEP.
+		umAudiencia.setForum(audiencia.getForum());
+		umAudiencia.setEscrivao(audiencia.getEscrivao());
+		umAudiencia.setPromotor(audiencia.getPromotor());
+		umAudiencia.setTipo(audiencia.getTipo());
+		umAudiencia.setData(audiencia.getData());
+		umAudiencia.setHora(audiencia.getHora());
+		umAudiencia.setCep(audiencia.getCep());// aqui eu coloquei o CEP.
 		modelAndView = servico.saveOrUpdate(umAudiencia);
 		return modelAndView;
 	}

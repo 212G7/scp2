@@ -38,7 +38,7 @@ public class BoletoController {
 
 	@GetMapping("/boletos/{id}") // diz ao metodo que ira responder a uma requisicao do tipo get
 	public ModelAndView retornaFormParaEditarCliente(@PathVariable("id") Long id) {
-		ModelAndView modelAndView = new ModelAndView("atualizarCliente");
+		ModelAndView modelAndView = new ModelAndView("atualizarBoleto");
 		modelAndView.addObject("boleto", servico.findById(id)); // o repositorio e injetado no controller
 		return modelAndView; // addObject adiciona objetos para view
 	}
@@ -74,9 +74,10 @@ public class BoletoController {
 		Boleto umBoleto = servico.findById(id);
 		umBoleto.setCpf(boleto.getCpf());
 		umBoleto.setNome(boleto.getNome());
-		umBoleto.setEmail(boleto.getEmail());
-		umBoleto.setTel(boleto.getTel());
-		umBoleto.setCep(boleto.getCep());//aqui eu coloquei o CEP.
+//		umBoleto.setEmail(boleto.getEmail());
+		umBoleto.setValor(boleto.getValor());
+		umBoleto.setProcesso(boleto.getProcesso());
+//		umBoleto.setCep(boleto.getCep());//aqui eu coloquei o CEP.
 		modelAndView = servico.saveOrUpdate(umBoleto);
 		return modelAndView;
 	}

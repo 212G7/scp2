@@ -39,8 +39,8 @@
 				<div class="col-md-8">
 					<form action="#" th:action="@{/sig/audiencias}"
 						th:object="${audiencia}" method="post">
+
 						<div class="row">
-						
 							<div class="form-group col-md-4">
 								<label for="cpf" class="col-form-label">CPF do Cliente</label> <input
 									type="text" th:field="*{cpf}" class="form-control" id="cpf"
@@ -49,43 +49,96 @@
 									class="textdanger"> </span>
 							</div>
 						</div>
-						
+
 						<div class="row">
 							<div class="form-group col-md-8">
-								<label for="nome" class="col-form-label">Nome do Juiz</label> <input
-									type="text" th:field="*{nome}" class="form-control" id="nome"
+								<label for="forum" class="col-form-label">Local do Fórum</label>
+								<input type="text" th:field="*{forum}" class="form-control"
+									id="forum" placeholder=""> <span
+									th:if="${#fields.hasErrors('forum')}" th:errors="*{forum}"
+									class="textdanger"> </span>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="form-group col-md-8">
+								<label for="juiz" class="col-form-label">Nome do Juiz</label> <input
+									type="text" th:field="*{juiz}" class="form-control" id="juiz"
 									placeholder=""> <span
-									th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"
+									th:if="${#fields.hasErrors('juiz')}" th:errors="*{juiz}"
 									class="textdanger"> </span>
 							</div>
 						</div>
 						<div class="row">
 							<div class="form-group col-md-8">
-								<label for="email" class="col-form-label">E-mail</label> <input
-									type="text" th:field="*{email}" class="form-control" id="email"
-									placeholder="Email"> <span
-									th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
-									class="textdanger"></span>
+								<label for="escrivao" class="col-form-label">Nome do
+									Escrivão</label> <input type="text" th:field="*{escrivao}"
+									class="form-control" id="escrivao" placeholder=""> <span
+									th:if="${#fields.hasErrors('escrivao')}"
+									th:errors="*{escrivao}" class="textdanger"> </span>
 							</div>
 						</div>
 						<div class="row">
 							<div class="form-group col-md-8">
-								<label for="registro" class="col-form-label">Registro da OAB - Advogado</label> <input
-									type="text" th:field="*{registro}" class="form-control" id="registro"
-									placeholder="Digite somente os 05 dígitos"> <span
-									th:if="${#fields.hasErrors('registro')}" th:errors="*{registro}"
-									class="textdanger"></span>
+								<label for="promotor" class="col-form-label">Nome do
+									Promotor</label> <input type="text" th:field="*{promotor}"
+									class="form-control" id="promotor" placeholder=""> <span
+									th:if="${#fields.hasErrors('promotor')}"
+									th:errors="*{promotor}" class="textdanger"></span>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label for="registro" class="col-form-label">Registro da
+									OAB - Advogado</label> <input type="text" th:field="*{registro}"
+									class="form-control" id="registro"
+									placeholder="Digite 05 dígitos"> <span
+									th:if="${#fields.hasErrors('registro')}"
+									th:errors="*{registro}" class="textdanger"></span>
 							</div>
 						</div>
 						<div class="row">
 							<div class="form-group col-md-8">
-								<label for="cep" class="col-form-label">CEP</label> <input
+								<label for="tipo" class="col-form-label">Tipo da
+									Audiência</label> <input type="text" th:field="*{tipo}"
+									class="form-control" id="tipo"
+									placeholder=""> <span
+									th:if="${#fields.hasErrors('tipo')}" th:errors="*{tipo}"
+									class="textdanger"></span>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label for="data" class="col-form-label">Data da
+									Audiência</label> <input type="text" th:field="*{data}"
+									class="form-control" id="data"
+									placeholder="Ex.: XX / XX / XXXX "> <span
+									th:if="${#fields.hasErrors('data')}" th:errors="*{data}"
+									class="textdanger"></span>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label for="hora" class="col-form-label">Hora da
+									Audiência</label> <input type="text" th:field="*{hora}"
+									class="form-control" id="hora"
+									placeholder="Ex.: XX h XX  "> <span
+									th:if="${#fields.hasErrors('hora')}" th:errors="*{hora}"
+									class="textdanger"></span>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label for="cep" class="col-form-label">CEP do Fórum</label> <input
 									type="text" th:field="*{cep}" class="form-control" id="cep"
-									placeholder="CEP do Fórum"> <span
+									placeholder="Ex.: XXXXX-XXX "> <span
 									th:if="${#fields.hasErrors('cep')}" th:errors="*{cep}"
 									class="textdanger"></span>
 							</div>
 						</div>
+
 						<div class="form-group col-md-8">
 							<input type="submit" class="btn btn-primary"
 								value="Cadastrar Audiência"> <input type="button"

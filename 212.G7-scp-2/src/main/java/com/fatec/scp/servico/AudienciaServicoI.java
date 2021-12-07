@@ -51,7 +51,7 @@ public class AudienciaServicoI implements AudienciaServico {
 				modelAndView.addObject("audiencias", audienciaRepository.findAll());
 			}
 		} catch (Exception e) {
-			modelAndView.setViewName("cadastrarCliente");
+			modelAndView.setViewName("cadastrarAudiencia");
 			if (e.getMessage().contains("could not execute statement")) {
 				modelAndView.addObject("message", "Dados invalidos - audiencia já cadastrado.");
 				logger.info(">>>>>> 5. audiencia ja cadastrado ==> " + e.getMessage());

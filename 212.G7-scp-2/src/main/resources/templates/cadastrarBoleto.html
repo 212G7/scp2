@@ -41,49 +41,45 @@
 						th:object="${boleto}" method="post">
 						<div class="row">
 							<div class="form-group col-md-4">
-								<label for="cpf" class="col-form-label">CPF</label> <input
+								<label for="cpf" class="col-form-label">CPF do Cliente</label> <input
 									type="text" th:field="*{cpf}" class="form-control" id="cpf"
-									placeholder="CPF"> <span
+									placeholder=""> <span
 									th:if="${#fields.hasErrors('cpf')}" th:errors="*{cpf}"
 									class="textdanger"> </span>
 							</div>
 						</div>
 						<div class="row">
 							<div class="form-group col-md-8">
-								<label for="nome" class="col-form-label">Nome</label> <input
+								<label for="nome" class="col-form-label">Nome do Cliente</label> <input
 									type="text" th:field="*{nome}" class="form-control" id="nome"
-									placeholder="Nome"> <span
+									placeholder=""> <span
 									th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"
 									class="textdanger"> </span>
 							</div>
 						</div>
+						  
 						<div class="row">
-							<div class="form-group col-md-8">
-								<label for="email" class="col-form-label">E-mail</label> <input
-									type="text" th:field="*{email}" class="form-control" id="email"
-									placeholder="Email"> <span
-									th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
+							<div class="form-group col-md-4">
+								<label for="valor" class="col-form-label">Valor do Processo</label> <input
+									type="text" th:field="*{valor}" class="form-control" id="valor"
+									placeholder="R$"> <span
+									th:if="${#fields.hasErrors('valor')}" th:errors="*{valor}"
 									class="textdanger"></span>
 							</div>
 						</div>
+						
 						<div class="row">
-							<div class="form-group col-md-8">
-								<label for="tel" class="col-form-label">Telefone</label> <input
-									type="text" th:field="*{tel}" class="form-control" id="tel"
-									placeholder="Telefone"> <span
-									th:if="${#fields.hasErrors('tel')}" th:errors="*{tel}"
+							<div class="form-group col-md-4">
+								<label for="processo" class="col-form-label">Identificação do Processo</label> <input
+									type="text" th:field="*{processo}" class="form-control" id="processo"
+									placeholder="Número do Processo"> <span
+									th:if="${#fields.hasErrors('processo')}" th:errors="*{processo}"
 									class="textdanger"></span>
 							</div>
 						</div>
-						<div class="row">
-							<div class="form-group col-md-8">
-								<label for="cep" class="col-form-label">CEP</label> <input
-									type="text" th:field="*{cep}" class="form-control" id="cep"
-									placeholder="CEP"> <span
-									th:if="${#fields.hasErrors('cep')}" th:errors="*{cep}"
-									class="textdanger"></span>
-							</div>
-						</div>
+						
+						
+						 
 						<div class="form-group col-md-8">
 							<input type="submit" class="btn btn-primary"
 								value="Cadastrar Boleto"> <input type="button"

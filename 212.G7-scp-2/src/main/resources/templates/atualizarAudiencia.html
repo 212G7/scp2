@@ -32,8 +32,8 @@
 					<form action="#"
 						th:action="@{/sig/audiencias/{id} (id=${audiencia.id}) }"
 						th:object="${audiencia}" method="post">
+
 						<div class="row">
-						
 							<div class="form-group col-md-4">
 								<label for="cpf" class="col-form-label">CPF</label> <input
 									type="text" th:field="*{cpf}" class="form-control" id="cpf"
@@ -42,51 +42,108 @@
 									class="text-danger"> </span>
 							</div>
 						</div>
+
 						<div class="row">
 							<div class="form-group col-md-8">
-								<label for="nome" class="col-form-label">Nome</label> 
-								<input type="text" th:field="*{nome}" class="form-control" id="nome"
-									placeholder="Nome"> <span
-									th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"
+								<label for="juiz" class="col-form-label">Nome do Juiz</label> <input
+									type="text" th:field="*{juiz}" class="form-control" id="juiz"
+									placeholder="juiz"> <span
+									th:if="${#fields.hasErrors('juiz')}" th:errors="*{juiz}"
 									class="text-danger"> </span>
 							</div>
 						</div>
+						
 						<div class="row">
 							<div class="form-group col-md-8">
-								<label for="email" class="col-form-label">E-mail</label> <input
-									type="text" th:field="*{email}" class="form-control" id="email"
-									placeholder="E-mail"> <span
-									th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
+								<label for="escrivao" class="col-form-label">Nome do Escrivâo</label> <input
+									type="text" th:field="*{escrivao}" class="form-control" id="escrivao"
+									placeholder="escrivao"> <span
+									th:if="${#fields.hasErrors('escrivao')}" th:errors="*{escrivao}"
+									class="text-danger"> </span>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="form-group col-md-8">
+								<label for="promotor" class="col-form-label">Nome do Promotor</label> <input
+									type="text" th:field="*{promotor}" class="form-control" id="promotor"
+									placeholder="promotor"> <span
+									th:if="${#fields.hasErrors('promotor')}" th:errors="*{promotor}"
 									class="text-danger"></span>
 							</div>
-							
-							
+						</div>
+
+						<div class="row">
 							<div class="form-group col-md-8">
-								<label for="registro" class="col-form-label">Registro da OAB - Advogado</label> <input
-									type="text" th:field="*{registro}" class="form-control" id="registro"
-									placeholder="registro"> <span
-									th:if="${#fields.hasErrors('registro')}" th:errors="*{registro}"
+								<label for="registro" class="col-form-label">Registro da
+									OAB - Advogado</label> <input type="text" th:field="*{registro}"
+									class="form-control" id="registro" placeholder="registro">
+								<span th:if="${#fields.hasErrors('registro')}"
+									th:errors="*{registro}" class="text-danger"></span>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="form-group col-md-8">
+								<label for="forum" class="col-form-label">Local da
+									Audiência</label> <input type="text" th:field="*{forum}"
+									class="form-control" id="forum" placeholder="forum"> <span
+									th:if="${#fields.hasErrors('forum')}" th:errors="*{forum}"
 									class="text-danger"></span>
 							</div>
-							
-							
-							<div class="form-group col-md-8">
+						</div>
+
+						<div class="row">
+							<div class="form-group col-md-4">
 								<label for="cep" class="col-form-label">CEP</label> <input
 									type="text" th:field="*{cep}" class="form-control" id="cep"
 									placeholder="CEP"> <span
 									th:if="${#fields.hasErrors('cep')}" th:errors="*{cep}"
 									class="text-danger"></span>
 							</div>
-							
-							<div class="form-group col-md-8">
-								<input type="submit" class="btn btn-primary" value="Atualizar Audiência">
-								<input type="button" class="btn btn-primary" value="Consultar Audiência" onclick="consulta();">
+						</div>
+						
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label for="tipo" class="col-form-label">Tipo da Audiência</label> <input
+									type="text" th:field="*{tipo}" class="form-control" id="tipo"
+									placeholder=""> <span
+									th:if="${#fields.hasErrors('tipo')}" th:errors="*{tipo}"
+									class="text-danger"></span>
 							</div>
 						</div>
-					</form>
+						
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label for="data" class="col-form-label">Data Audiência</label> <input
+									type="text" th:field="*{data}" class="form-control" id="data"
+									placeholder="Ex.: XX / XX / XXXX "> <span
+									th:if="${#fields.hasErrors('data')}" th:errors="*{data}"
+									class="text-danger"></span>
+							</div>
+						</div>
+						
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label for="hora" class="col-form-label">Hora da Audiência</label> <input
+									type="text" th:field="*{hora}" class="form-control" id="hora"
+									placeholder="Ex.: XX h XX "> <span
+									th:if="${#fields.hasErrors('hora')}" th:errors="*{hora}"
+									class="text-danger"></span>
+							</div>
+						</div>
+
+						<div class="form-group col-md-8">
+							<input type="submit" class="btn btn-primary"
+								value="Atualizar Audiência"> <input type="button"
+								class="btn btn-primary" value="Consultar Audiência"
+								onclick="consulta();">
+						</div>
 				</div>
+				</form>
 			</div>
 		</div>
+	</div>
 	</div>
 </body>
 </html>

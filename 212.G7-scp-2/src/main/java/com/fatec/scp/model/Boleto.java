@@ -23,28 +23,30 @@ public class Boleto {
 	@NotNull
 	@Size(min = 1, max = 50, message = "Nome deve ser preenchido")
 	private String nome;
-	@Email(message = "E-mail inválido")
-	private String email;
+//	@Email(message = "E-mail inválido")
+//	private String email;
+//	@NotNull
+//	private String cep;
 	@NotNull
-	private String cep;
-	@NotNull
-	private Long tel;
-	@ManyToOne
-	private Endereco endereco;
+	private String valor;
+//	@ManyToOne
+//	private Endereco endereco;
+	private String processo;
 	private String dataCadastro;
 	private String dataUltimaTransacao;
 
 	public Boleto() {
 	}
 
-	public Boleto(String CPF, String nome, String email, String cep,Long tel, Endereco endereco) {
+	public Boleto(String CPF, String nome, String processo, String valor) {
 		super();
 		this.cpf = CPF;
 		this.nome = nome;
-		this.email = email;
-		this.tel = tel;
-		this.cep = cep;
-		this.endereco = endereco;
+//		this.email = email;
+		this.valor = valor;
+		this.processo = processo;
+//		this.cep = cep;
+//		this.endereco = endereco;
 		DateTime dataAtual = new DateTime();
 		setDataCadastro(dataAtual);
 	}
@@ -72,38 +74,46 @@ public class Boleto {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
-	public String getEmail() {
-		return email;
+	
+	public String getProcesso() {
+		return processo;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setProcesso(String processo) {
+		this.processo = processo;
 	}
 
-	public Long getTel() {
-		return tel;
+//	public String getEmail() {
+//		return email;
+//	}
+
+//	public void setEmail(String email) {
+//		this.email = email;
+//	}
+
+	public String getValor() {
+		return valor;
 	}
 
-	public void setTel(Long tel) {
-		this.tel = tel;
+	public void setValor(String valor) {
+		this.valor = valor;
 	}
 	
-	public String getCep() {
-		return cep;
-	}
+//	public String getCep() {
+//		return cep;
+//	}
 
-	public void setCep(String cep) {
-		this.cep = cep;
-	}
+//	public void setCep(String cep) {
+//		this.cep = cep;
+//	}
 
-	public Endereco getEndereco() {
-		return endereco;
-	}
+//	public Endereco getEndereco() {
+//		return endereco;
+//	}
 
-	public void setEndereco(Endereco endereco) {
-		this.endereco = endereco;
-	}
+//	public void setEndereco(Endereco endereco) {
+//		this.endereco = endereco;
+//	}
 
 	public String getDataCadastro() {
 		return dataCadastro;

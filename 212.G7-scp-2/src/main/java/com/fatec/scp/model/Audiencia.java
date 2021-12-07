@@ -22,27 +22,42 @@ public class Audiencia {
 	private String cpf;
 	@NotNull
 	@Size(min = 1, max = 50, message = "Nome deve ser preenchido")
-	private String nome;
-	@Email(message = "E-mail inválido")
-	private String email;
+	private String juiz;
+//	@Email(message = "E-mail inválido")
+//	private String email;
 	@NotNull
 	private String cep;
 	@NotNull
+	private String promotor;
+	@NotNull
 	private String registro;
+	@NotNull
+	private String data;
+	@NotNull
+	private String hora;
+	@NotNull
+	private String tipo;
 	@ManyToOne
 	private Endereco endereco;
+	private String forum;
+	private String escrivao;
 	private String dataCadastro;
 	private String dataUltimaTransacao;
 
 	public Audiencia() {
 	}
 
-	public Audiencia(String CPF, String nome, String email, String cep, String registro, Endereco endereco) {
+	public Audiencia(String CPF, String juiz, String tipo, String data, String hora, String promotor, String forum, String escrivao, String cep, String registro, Endereco endereco) {
 		super();
 		this.cpf = CPF;
-		this.nome = nome;
-		this.email = email;
+		this.juiz = juiz;
+		this.promotor = promotor;
 		this.registro = registro;
+		this.forum = forum; 
+		this.escrivao = escrivao;
+		this.tipo = tipo;
+		this.data = data;
+		this.hora = hora;
 		this.cep = cep;
 		this.endereco = endereco;
 		DateTime dataAtual = new DateTime();
@@ -65,20 +80,20 @@ public class Audiencia {
 		this.cpf = cpf;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getJuiz() {
+		return juiz;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setJuiz(String juiz) {
+		this.juiz = juiz;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getPromotor() {
+		return promotor;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setPromotor(String promotor) {
+		this.promotor = promotor;
 	}
 	
 	public String getRegistro() {
@@ -87,6 +102,46 @@ public class Audiencia {
 
 	public void setRegistro(String registro) {
 		this.registro = registro;
+	}
+	
+	public String getForum() {
+		return forum;
+	}
+
+	public void setForum(String forum) {
+		this.forum = forum;
+	}
+	
+	public String getEscrivao() {
+		return escrivao;
+	}
+
+	public void setEscrivao(String escrivao) {
+		this.escrivao = escrivao;
+	}
+	
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+	
+	public String getData() {
+		return data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
+	}
+	
+	public String getHora() {
+		return hora;
+	}
+
+	public void setHora(String hora) {
+		this.hora = hora;
 	}
 	
 	public String getCep() {

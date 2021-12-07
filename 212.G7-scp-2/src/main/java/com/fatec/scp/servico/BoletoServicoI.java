@@ -9,16 +9,16 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 import com.fatec.scp.model.Boleto;
 import com.fatec.scp.model.BoletoRepository;
-import com.fatec.scp.model.Endereco;
-import com.fatec.scp.model.EnderecoRepository;
+//import com.fatec.scp.model.Endereco;
+//import com.fatec.scp.model.EnderecoRepository;
 
 @Service
 public class BoletoServicoI implements BoletoServico {
 	Logger logger = LogManager.getLogger(BoletoServicoI.class);
 	@Autowired
 	private BoletoRepository boletoRepository;
-	@Autowired
-	private EnderecoRepository enderecoRepository;
+//	@Autowired
+//	private EnderecoRepository enderecoRepository;
 
 	public Iterable<Boleto> findAll() {
 		return boletoRepository.findAll();
@@ -40,16 +40,16 @@ public class BoletoServicoI implements BoletoServico {
 	public ModelAndView saveOrUpdate(Boleto boleto) {
 		ModelAndView modelAndView = new ModelAndView("consultarBoleto");
 		try {
-			Endereco endereco = obtemEndereco(boleto.getCep());
-			if (endereco != null) {
+//			Endereco endereco = obtemEndereco(boleto.getCep());
+//			if (endereco != null) {
 //Boleto.setDataCadastro(new DateTime());
-				endereco.setCpf(boleto.getCpf());
-				enderecoRepository.save(endereco);
-				boleto.setEndereco(endereco);
+//				endereco.setCpf(boleto.getCpf());
+//				enderecoRepository.save(endereco);
+//				boleto.setEndereco(endereco);
 				boletoRepository.save(boleto);
 				logger.info(">>>>>> 4. comando save executado ");
-				modelAndView.addObject("Boletos", boletoRepository.findAll());
-			}
+				modelAndView.addObject("boletos", boletoRepository.findAll());
+//			}
 		} catch (Exception e) {
 			modelAndView.setViewName("cadastrarBoleto");
 			if (e.getMessage().contains("could not execute statement")) {
@@ -63,11 +63,11 @@ public class BoletoServicoI implements BoletoServico {
 		return modelAndView;
 	}
 
-	public Endereco obtemEndereco(String cep) {
-		RestTemplate template = new RestTemplate();
-		String url = "https://viacep.com.br/ws/{cep}/json/";
-		Endereco endereco = template.getForObject(url, Endereco.class, cep);
-		logger.info(">>>>>> 3. obtem endereco ==> " + endereco.toString());
-		return endereco;
-	}
+//	public Endereco obtemEndereco(String cep) {
+//		RestTemplate template = new RestTemplate();
+//		String url = "https://viacep.com.br/ws/{cep}/json/";
+//		Endereco endereco = template.getForObject(url, Endereco.class, cep);
+//		logger.info(">>>>>> 3. obtem endereco ==> " + endereco.toString());
+//		return endereco;
+//	}
 }
